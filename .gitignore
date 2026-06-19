@@ -1,0 +1,31 @@
+# Virtual Environment
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Streamlit
+.streamlit/
+
+# Chroma Database
+chroma_db/*
+!chroma_db/.gitkeep
+
+# Uploaded Files
+uploads/*
+!uploads/.gitkeep
+
+# Sample Data
+data/
+
+# IDE
+.vscode/
+.idea/
+
+# OS Files
+.DS_Store
+Thumbs.db

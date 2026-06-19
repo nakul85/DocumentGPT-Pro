@@ -1,0 +1,270 @@
+/* =========================================================
+   DocumentGPT Pro - Professional UI
+   ========================================================= */
+
+/* ----------------------------
+   Hide Streamlit Branding
+----------------------------- */
+
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+[data-testid="stDecoration"] {
+    display: none;
+}
+
+header[data-testid="stHeader"] {
+    background: transparent;
+}
+
+/* ----------------------------
+   Main Layout
+----------------------------- */
+
+.block-container{
+    padding-top:1.5rem;
+    padding-bottom:2rem;
+    padding-left:2rem;
+    padding-right:2rem;
+    max-width:none;
+}
+
+/* ----------------------------
+   Sidebar
+----------------------------- */
+
+section[data-testid="stSidebar"] {
+    border-right: 1px solid #E5E7EB;
+}
+
+/* ----------------------------
+   Buttons
+----------------------------- */
+
+.stButton > button {
+
+    width: 100%;
+    height: 46px;
+
+    border: none;
+    border-radius: 12px;
+
+    font-weight: 600;
+
+    transition: all .25s ease;
+}
+
+.stButton > button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 18px rgba(0,0,0,.12);
+}
+
+/* ----------------------------
+   Download Buttons
+----------------------------- */
+
+.stDownloadButton > button {
+
+    width: 100%;
+
+    border-radius: 12px;
+
+    height: 44px;
+}
+
+/* ----------------------------
+   Chat Messages
+----------------------------- */
+
+.stChatMessage {
+
+    border-radius: 14px;
+
+    padding: .6rem;
+
+    margin-bottom: .6rem;
+
+    border: 1px solid rgba(0,0,0,.08);
+}
+
+/* ----------------------------
+   Chat Input
+----------------------------- */
+
+[data-testid="stChatInput"] {
+
+    border-radius: 14px;
+}
+
+/* ----------------------------
+   File Uploader
+----------------------------- */
+
+[data-testid="stFileUploader"] {
+
+    border-radius: 14px;
+
+    border: 2px dashed #D1D5DB;
+
+    padding: 1rem;
+}
+
+/* ----------------------------
+   Metrics
+----------------------------- */
+
+[data-testid="stMetric"] {
+
+    border: 1px solid #E5E7EB;
+
+    border-radius: 14px;
+
+    padding: 18px;
+
+    background: white;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,.04);
+}
+
+/* ----------------------------
+   Expanders
+----------------------------- */
+
+details {
+
+    border: 1px solid #E5E7EB;
+
+    border-radius: 12px;
+
+    padding: .3rem .6rem;
+
+    margin-bottom: .8rem;
+}
+
+/* ----------------------------
+   Containers
+----------------------------- */
+
+.dashboard-card {
+
+    background: white;
+
+    border: 1px solid #E5E7EB;
+
+    border-radius: 16px;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    box-shadow: 0 5px 18px rgba(0,0,0,.05);
+}
+
+/* ----------------------------
+   Dividers
+----------------------------- */
+
+hr {
+
+    margin-top: 1rem;
+
+    margin-bottom: 1rem;
+}
+
+/* ----------------------------
+   Headings
+----------------------------- */
+
+h1,
+h2,
+h3 {
+
+    font-weight: 700;
+}
+
+/* ----------------------------
+   Markdown Tables
+----------------------------- */
+
+table {
+
+    border-collapse: collapse;
+
+    width: 100%;
+}
+
+table th {
+
+    background: #F8FAFC;
+}
+
+table th,
+table td {
+
+    border: 1px solid #E5E7EB;
+
+    padding: 10px;
+}
+
+/* ----------------------------
+   Code Blocks
+----------------------------- */
+
+pre {
+
+    border-radius: 12px;
+
+    padding: 12px;
+}
+
+/* ----------------------------
+   Scrollbar
+----------------------------- */
+
+::-webkit-scrollbar {
+
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #C7CBD1;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #9CA3AF;
+}
+
+/* ==========================================
+   Suggested Question Cards
+========================================== */
+
+.stButton > button {
+
+    text-align: left;
+
+    font-size: 15px;
+
+    padding: 0.85rem 1rem;
+
+    border-radius: 12px;
+
+    transition: all .25s ease;
+}
+
+.stButton > button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+}
