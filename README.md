@@ -438,7 +438,7 @@ AI Engineer | Python | Machine Learning | Generative AI | Retrieval-Augmented Ge
 ### Connect with Me
 
 - **GitHub:** https://github.com/nakul85
-- **LinkedIn:** *(Add your LinkedIn profile here)*
+- **LinkedIn:** https://www.linkedin.com/in/nakulfirodiya74/
 
 ---
 
