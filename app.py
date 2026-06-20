@@ -1,7 +1,7 @@
 import os
 import streamlit as st
 from components.copy_answer import render_copy_answer
-from utils.confidence import calculate_confidence
+from utils.context_relevance import calculate_retrieval_confidence
 from utils.context_builder import build_context
 from components.layout import create_layout
 from components.sidebar import render_sidebar
@@ -165,12 +165,28 @@ with right_panel:
 
         if question:
 
+            # ----------------------------------------
+            # Save & display user message immediately
+            # ----------------------------------------
+
             add_message(
                 "user",
                 question
             )
 
-            with st.spinner("Searching knowledge base..."):
+            with st.chat_message(
+                "user",
+                avatar="🧑"
+            ):
+                st.markdown(question)
+
+            # ----------------------------------------
+            # Retrieve relevant chunks
+            # ----------------------------------------
+
+            with st.spinner(
+                "Searching knowledge base..."
+            ):
 
                 start_retrieval_timer()
 
@@ -186,14 +202,21 @@ with right_panel:
 
                     documents.append(doc)
 
-                confidence, confidence_label = calculate_confidence(
-                    results
+                confidence, confidence_label = (
+                    calculate_retrieval_confidence(
+                        results
+                    )
                 )
 
-                st.session_state.confidence = confidence
+                st.session_state.confidence = (
+                    confidence
+                )
 
-                st.session_state.confidence_label = confidence_label
-
+                st.session_state.confidence_label = (
+                    confidence_label
+                )
+                print("Confidence:", st.session_state.confidence)
+                print("Label:", st.session_state.confidence_label)
                 context = build_context(
                     documents
                 )
@@ -204,7 +227,14 @@ with right_panel:
                 st.session_state.messages
             )
 
-            with st.chat_message("assistant"):
+            # ----------------------------------------
+            # Generate Answer
+            # ----------------------------------------
+
+            with st.chat_message(
+                "assistant",
+                avatar="🤖"
+            ):
 
                 placeholder = st.empty()
 
@@ -213,9 +243,13 @@ with right_panel:
                 start_llm_timer()
 
                 for chunk in stream_answer(
+
                     context=context,
+
                     question=question,
+
                     history=history
+
                 ):
 
                     answer += chunk
@@ -224,7 +258,9 @@ with right_panel:
                         answer + "▌"
                     )
 
-                placeholder.markdown(answer)
+                placeholder.markdown(
+                    answer
+                )
 
             stop_llm_timer()
 
@@ -232,7 +268,11 @@ with right_panel:
                 "assistant",
                 answer
             )
-            render_copy_answer(answer)
+
+            render_copy_answer(
+                answer
+            )
+
             render_sources(
                 documents
             )

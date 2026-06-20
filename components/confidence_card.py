@@ -19,7 +19,7 @@ def render_confidence_card():
     if confidence == 0:
         return
 
-    st.subheader("🧠 Answer Confidence")
+    st.subheader("📊 Context Relevance")
 
     st.progress(
         confidence / 100
@@ -41,13 +41,13 @@ def render_confidence_card():
     with col1:
 
         st.metric(
-            "Confidence",
+            "Context Score",
             f"{confidence}%"
         )
 
     with col2:
 
         st.metric(
-            "Quality",
+            "Relevance",
             f"{icon} {label}"
         )

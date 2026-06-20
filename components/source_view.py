@@ -56,10 +56,10 @@ def render_sources(documents):
             if score is not None:
 
                 confidence = max(
-                    0,
+                    20,
                     min(
                         100,
-                        round((1 - score) * 100)
+                        round((1 - score/1.2) * 100)
                     )
                 )
 
@@ -68,7 +68,7 @@ def render_sources(documents):
                 )
 
                 st.caption(
-                    f"Match Confidence: **{confidence}%**"
+                    f"Context Relevance: **{confidence}%**"
                 )
 
             st.markdown("---")

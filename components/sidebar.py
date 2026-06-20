@@ -17,9 +17,7 @@ from utils.export_chat import (
     export_pdf
 )
 
-from components.confidence_card import (
-    render_confidence_card
-)
+
 
 
 def render_sidebar():
@@ -98,17 +96,6 @@ def render_sidebar():
 
         st.divider()
 
-        # ==================================================
-        # Confidence
-        # ==================================================
-
-        render_confidence_card()
-
-        if st.session_state.get(
-            "confidence",
-            0
-        ):
-            st.divider()
 
         # ==================================================
         # Conversation
@@ -297,7 +284,7 @@ Production-ready Retrieval-Augmented Generation (RAG) assistant.
 - Semantic Search
 - Suggested Questions
 - Source References
-- Confidence Score
+- Context Relevance Scoring
 - Streaming Responses
 - Chat Export
 - Offline Inference
